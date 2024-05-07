@@ -7,9 +7,9 @@ const SpeedAtas = ({ speed }) => {
     <div className="flex justify-center">
       <div className="flex w-full h-80 rounded-t-lg pt-10 px-10 bg-gray-900 shadow-md overflow-hidden">
         <div className="flex-1 flex justify-center items-center bg-gray-800 text-white">
-          <div className="font-bold rotate-0">
-            <span className="text-7xl font-bold text-[#00FF47]">{speed}</span>
-            <span className="text-3xl"> km/h</span>
+          <div>
+            <span className="text-8xl font-bold text-[#00FF47]">{speed}</span>
+            <span className="text-3xl "> km/h</span>
           </div>
         </div>
 

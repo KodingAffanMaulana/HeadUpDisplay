@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         bungee: ['Bungee Spice', ...defaultTheme.fontFamily.sans],
+        jaro: ['Jaro', ...defaultTheme.fontFamily.sans],
       },
     },
   },

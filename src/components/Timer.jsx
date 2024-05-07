@@ -11,17 +11,15 @@ const Time = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Fungsi untuk mengubah format waktu menjadi hh:mm:ss
   const formatTime = (time) => {
-    return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    const options = { hour: '2-digit', minute: '2-digit' };
+    return time.toLocaleTimeString([], options).replace(/\./g, ' : ');
   };
 
   return (
-    <div>
-      <div className="flex justify-center">
-        <div className="bg-black text-white py-2 px-3 rounded-lg">
-          <h2>{formatTime(currentTime)}</h2>
-        </div>
+    <div className="flex items-center justify-center gap-2">
+      <div className="bg-gray-950 text-white py-2 px-3">
+        <h2 className="font-medium text-xl">{formatTime(currentTime)}</h2>
       </div>
     </div>
   );

@@ -19,11 +19,11 @@ const SpeedBawah = ({ kilometers }) => {
         </div>
 
         <div className="w-[20%] flex flex-col justify-center items-center gap-5 ">
-          <h1 className="text-red-500 font-bungee font-semibold">HUD Unila</h1>
+          <h1 className="text-white text-2xl font-thin font-jaro">Head Up Display</h1>
         </div>
 
         <div className="flex-1 flex justify-center items-center bg-gradient-to-b from-gray-700  text-white gap-4 text-4xl">
-          <p className="text-xl">{kilometers} km/h</p>
+          <p className="text-xl font-thin">{kilometers} km/h</p>
         </div>
       </div>
     </div>

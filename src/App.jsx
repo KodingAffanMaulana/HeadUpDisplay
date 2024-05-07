@@ -8,8 +8,8 @@ function App() {
   const [kilometers, setKilometers] = useState(1000);
   return (
     <>
-      <div className="flex items-center justify-center bg-gray-950 h-screen">
-        <di className="w-full">
+      <div className="flex items-center justify-center bg-[url('./assets/bg.svg')] h-screen">
+        <di className="w-full border-white border-2 border-dashed">
           <SpeedAtas speed={speed} />
           <SpeedBawah kilometers={kilometers} />
         </di>
