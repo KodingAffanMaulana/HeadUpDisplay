@@ -23,7 +23,7 @@ const SpeedBawah = ({ kilometers }) => {
         </div>
 
         <div className="flex-1 flex justify-center items-center bg-gradient-to-b from-gray-700  text-white gap-4 text-4xl">
-          <p className="text-xl font-thin">{kilometers} km/h</p>
+          <p className="text-xl font-thin">{kilometers} km</p>
         </div>
       </div>
     </div>
