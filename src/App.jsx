@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false); // Setelah jeda waktu tertentu, set loading menjadi false untuk menampilkan konten utama
-    }, 2000); // Mengatur jeda waktu loading (dalam milidetik), sesuaikan dengan kebutuhan Anda
+    }, 4000); // Mengatur jeda waktu loading (dalam milidetik), sesuaikan dengan kebutuhan Anda
 
     // Membersihkan timeout saat komponen unmount
     return () => clearTimeout(timeout);
