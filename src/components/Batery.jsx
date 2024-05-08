@@ -1,12 +1,18 @@
 /* eslint-disable react/prop-types */
-// import GaugeBg from '../assets/gauge-bg.png';
 
-const gaugeWidth = 100;
-const gaugeHeight = 30;
-const gaugeContentWidth = gaugeWidth - 16;
+const gaugeWidth = 80;
+let gaugeHeight = 30; // Initialize gaugeHeight
+
+// Untuk menyesuaikan gaugeHeight menjadi 20 saat digunakan di perangkat mobile
+if (window.innerWidth <= 667) {
+  // Angka 640 di sini dapat disesuaikan sesuai dengan breakpoint untuk perangkat mobile
+  gaugeHeight = 24;
+}
+
+const gaugeContentWidth = gaugeWidth - 10;
 const gaugeBarsNb = 10;
 const gaugeBarWidth = gaugeContentWidth / gaugeBarsNb;
-const gaugeBarRadius = 10;
+const gaugeBarRadius = 9;
 
 const styles = {
   container: {
@@ -16,19 +22,17 @@ const styles = {
   },
   barsContainer: {
     width: `${gaugeWidth}px`,
-    height: `${gaugeHeight}px`,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    borderRadius: '14px', // rounded-xl equivalent
+    borderRadius: '12px', // rounded-xl equivalent
     borderStyle: 'solid',
     borderWidth: '2px',
     borderColor: 'white', // default color
   },
   barContainer: {
     width: `${gaugeBarWidth}px`,
-    height: `${gaugeHeight - 10}px`,
-    paddingLeft: '2px',
+    height: `${gaugeHeight}px`,
   },
   bar: {
     width: `${gaugeBarWidth * 2}px`,
@@ -50,9 +54,6 @@ const styles = {
     left: 0,
     top: 0,
     zIndex: 0,
-  },
-  barText: {
-    marginTop: `3px`,
   },
   red: {
     color: 'red',
@@ -78,10 +79,9 @@ const Battery = ({ percentage }) => {
 
   return (
     <>
-      <div className="flex gap-3">
-        {/* <img src={GaugeBg} style={styles.bg} alt="BatteryBG" /> */}
+      <div className="flex gap-3 ">
         <div
-          className="border-2 rounded-xl"
+          className="border-2 rounded-xl "
           style={{ ...styles.barsContainer, borderColor: getColor(percentage) }}>
           {percentageArray.map((ele, index) => (
             <div key={index} style={styles.barContainer}>
@@ -98,7 +98,7 @@ const Battery = ({ percentage }) => {
         </div>
         <div style={styles.barText}>
           {percentage < 30 ? (
-            <span className="text-red-500"> {percentage}% </span>
+            <span className="text-red-500 animate-pulse"> {percentage}% </span>
           ) : percentage < 50 ? (
             <span className="text-yellow-200"> {percentage}% </span>
           ) : (

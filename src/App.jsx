@@ -23,17 +23,17 @@ function App() {
           <div className="text-white font-bungee">Loading...</div>
         </div>
       ) : (
-        <div className="landscape-container">
-          <div className="flex items-center justify-center bg-[url('./assets/bg.svg')]">
-            <div className="w-full border-white border-2 h-screen border-dashed">
+        <>
+          <div className="flex items-center justify-center bg-[url('./assets/bg.svg')] landscape-container">
+            <div className="w-full h-screen border-white border-2 border-dashed">
               <SpeedAtas speed={speed} />
               <SpeedBawah kilometers={kilometers} />
             </div>
           </div>
-          <div className="landscape-message bg-black text-white flex justify-center items-center">
+          <div className="landscape-message p-10 text-center">
             <p>Please rotate your device to landscape mode to view this content.</p>
           </div>
-        </div>
+        </>
       )}
     </>
   );

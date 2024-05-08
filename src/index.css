@@ -9,29 +9,26 @@ body {
   height: calc(100vw * 9 / 16);
   /* Tinggi dihitung berdasarkan lebar, sesuai rasio 16:9 */
   max-width: 1600px;
-  /* Batas maksimal lebar, bisa disesuaikan */
   margin: 0 auto;
-  /* Mengatur margin agar konten berada di tengah */
 }
 
-.landscape-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
-
+/* Menampilkan pesan untuk memutar perangkat jika orientasi adalah potrait */
 .landscape-message {
   display: none;
 }
 
 @media screen and (orientation: portrait) {
-  .landscape-message {
-    display: block;
-    text-align: center;
-    padding-top: 50%;
-  }
-
   .landscape-container {
     display: none;
+  }
+
+  .landscape-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Menggunakan tinggi viewport untuk orientasi potrait */
+    background-color: black;
+    color: white;
   }
 }
