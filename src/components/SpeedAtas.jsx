@@ -4,11 +4,11 @@ import Time from './Timer';
 
 const SpeedAtas = ({ speed }) => {
   return (
-    <div className="flex justify-center">
-      <div className="flex w-full h-80  pt-10 px-10 bg-gray-900 shadow-md overflow-hidden">
-        <div className="flex-1 flex justify-center items-center bg-gray-800 text-white rounded-t-full">
+    <div className="flex justify-center h-[70%]">
+      <div className="flex w-full px-10 bg-gray-900 shadow-md overflow-hidden pt-20">
+        <div className="flex-1 flex justify-center items-center bg-gray-800 text-white rounded-t-full pt-10">
           <div>
-            <span className="text-8xl font-bold text-[#00FF47]">{speed}</span>
+            <span className="text-9xl font-bold text-[#00FF47]">{speed}</span>
             <span className="text-3xl "> km/h</span>
           </div>
         </div>
@@ -18,8 +18,8 @@ const SpeedAtas = ({ speed }) => {
           <img src={car} alt="car" className="h-20" />
         </div>
 
-        <div className="flex-1 flex justify-center items-center bg-gray-800 text-white gap-4 text-4xl font-bold rounded-t-full">
-          <div className="font-bold text-4xl">
+        <div className="flex-1 flex justify-center items-center bg-gray-800 text-white gap-4 text-7xl font-bold rounded-t-full pt-20">
+          <div className="font-bold text-6xl gap-5 flex flex-col">
             <div>D</div>
             <div>N</div>
             <div>R</div>

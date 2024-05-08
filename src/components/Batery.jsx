@@ -3,10 +3,10 @@
 
 const gaugeWidth = 100;
 const gaugeHeight = 30;
-const gaugeContentWidth = gaugeWidth - 12;
+const gaugeContentWidth = gaugeWidth - 16;
 const gaugeBarsNb = 10;
 const gaugeBarWidth = gaugeContentWidth / gaugeBarsNb;
-const gaugeBarRadius = 8;
+const gaugeBarRadius = 10;
 
 const styles = {
   container: {
@@ -20,7 +20,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    borderRadius: '1rem', // rounded-xl equivalent
+    borderRadius: '14px', // rounded-xl equivalent
     borderStyle: 'solid',
     borderWidth: '2px',
     borderColor: 'white', // default color
@@ -29,7 +29,6 @@ const styles = {
     width: `${gaugeBarWidth}px`,
     height: `${gaugeHeight - 10}px`,
     paddingLeft: '2px',
-    paddingRight: '2px',
   },
   bar: {
     width: `${gaugeBarWidth * 2}px`,
@@ -53,7 +52,7 @@ const styles = {
     zIndex: 0,
   },
   barText: {
-    marginTop: `5px`,
+    marginTop: `3px`,
   },
   red: {
     color: 'red',
@@ -99,9 +98,11 @@ const Battery = ({ percentage }) => {
         </div>
         <div style={styles.barText}>
           {percentage < 30 ? (
-            <span style={styles.red}> {percentage}% </span>
+            <span className="text-red-500"> {percentage}% </span>
+          ) : percentage < 50 ? (
+            <span className="text-yellow-200"> {percentage}% </span>
           ) : (
-            <span style={styles.green}> {percentage}% </span>
+            <span className="text-green-500"> {percentage}% </span>
           )}
         </div>
       </div>

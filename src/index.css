@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  overflow: hidden;
   width: 100vw;
   /* Lebar 100% dari viewport */
   height: calc(100vw * 9 / 16);
@@ -11,4 +12,26 @@ body {
   /* Batas maksimal lebar, bisa disesuaikan */
   margin: 0 auto;
   /* Mengatur margin agar konten berada di tengah */
+}
+
+.landscape-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.landscape-message {
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
+  .landscape-message {
+    display: block;
+    text-align: center;
+    padding-top: 50%;
+  }
+
+  .landscape-container {
+    display: none;
+  }
 }

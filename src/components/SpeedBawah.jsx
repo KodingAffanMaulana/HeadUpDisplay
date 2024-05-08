@@ -5,9 +5,9 @@ import lamp from '../assets/lamp.png';
 import Battery from './Batery';
 
 const SpeedBawah = ({ kilometers }) => {
-  const [batery, setBaterry] = useState(10);
+  const [batery, setBaterry] = useState(40);
   return (
-    <div className="flex justify-center ">
+    <div className="flex justify-center h-[30%]">
       <div className="flex w-full rounded-b-lg bg-gray-900 shadow-md overflow-hidden pb-10 px-10">
         <div className="flex-1 flex justify-center items-center text-white bg-gradient-to-b from-gray-800">
           <div className="font-bold rotate-0 flex justify-center items-center gap-10 ">
@@ -19,7 +19,7 @@ const SpeedBawah = ({ kilometers }) => {
         </div>
 
         <div className="w-[20%] flex flex-col justify-center items-center gap-5 ">
-          <h1 className="text-white text-2xl font-thin font-jaro">Head Up Display</h1>
+          <h1 className="text-white text-[12px] sm:text-2xl">Head Up Display</h1>
         </div>
 
         <div className="flex-1 flex justify-center items-center bg-gradient-to-b from-gray-800  text-white gap-4 text-4xl">
