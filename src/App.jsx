@@ -30,7 +30,7 @@ function App() {
               <SpeedBawah kilometers={kilometers} />
             </div>
           </div>
-          <div className="landscape-message">
+          <div className="landscape-message bg-black text-white flex justify-center items-center">
             <p>Please rotate your device to landscape mode to view this content.</p>
           </div>
         </div>
