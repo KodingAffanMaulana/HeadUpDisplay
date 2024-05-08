@@ -14,7 +14,7 @@ const SpeedBawah = ({ kilometers }) => {
             <div>
               <Battery percentage={batery} />
             </div>
-            <img src={lamp} alt="lamp" className="h-6 w-6 lg:w-8 lg:h-8 animate-pulse" />
+            <img src={lamp} alt="lamp" className="h-6 w-6 lg:w-10 lg:h-10 animate-pulse" />
           </div>
         </div>
 

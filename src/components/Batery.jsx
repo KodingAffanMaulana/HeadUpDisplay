@@ -79,7 +79,7 @@ const Battery = ({ percentage }) => {
 
   return (
     <>
-      <div className="flex gap-3 ">
+      <div className="flex gap-1 lg:gap-3">
         <div
           className="border-2 rounded-xl "
           style={{ ...styles.barsContainer, borderColor: getColor(percentage) }}>
@@ -96,7 +96,7 @@ const Battery = ({ percentage }) => {
             </div>
           ))}
         </div>
-        <div style={styles.barText}>
+        <div className="flex items-center">
           {percentage < 30 ? (
             <span className="text-red-500 animate-pulse"> {percentage}% </span>
           ) : percentage < 50 ? (
