@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  scroll-behavior: smooth;
+body {
+  width: 100vw;
+  /* Lebar 100% dari viewport */
+  height: calc(100vw * 9 / 16);
+  /* Tinggi dihitung berdasarkan lebar, sesuai rasio 16:9 */
+  max-width: 1600px;
+  /* Batas maksimal lebar, bisa disesuaikan */
+  margin: 0 auto;
+  /* Mengatur margin agar konten berada di tengah */
 }
