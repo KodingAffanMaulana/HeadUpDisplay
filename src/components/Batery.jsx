@@ -6,10 +6,7 @@ const gaugeHeight = 30;
 const gaugeContentWidth = gaugeWidth - 12;
 const gaugeBarsNb = 10;
 const gaugeBarWidth = gaugeContentWidth / gaugeBarsNb;
-const gaugeBarMargin = 1;
-const gaugeBarRadius = 10;
-
-const lowBattery = 25;
+const gaugeBarRadius = 8;
 
 const styles = {
   container: {
@@ -23,18 +20,20 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: '3px',
+    borderRadius: '1rem', // rounded-xl equivalent
+    borderStyle: 'solid',
+    borderWidth: '2px',
+    borderColor: 'white', // default color
   },
   barContainer: {
     width: `${gaugeBarWidth}px`,
     height: `${gaugeHeight - 10}px`,
-    paddingLeft: `${gaugeBarMargin}px`,
-    paddingRight: `${gaugeBarMargin}px`,
+    paddingLeft: '2px',
+    paddingRight: '2px',
   },
   bar: {
-    width: `${gaugeBarWidth - gaugeBarMargin * 2}px`,
+    width: `${gaugeBarWidth * 2}px`,
     height: '100%',
-    backgroundColor: '#ffff',
     zIndex: 1,
   },
   barFirst: {
@@ -44,9 +43,6 @@ const styles = {
   barLast: {
     borderTopRightRadius: `${gaugeBarRadius}px`,
     borderBottomRightRadius: `${gaugeBarRadius}px`,
-  },
-  barRed: {
-    backgroundColor: '#8b0000',
   },
   bg: {
     position: 'absolute',
@@ -71,27 +67,42 @@ const Battery = ({ percentage }) => {
   const percent10 = Math.round(percentage / gaugeBarsNb);
   const percentageArray = [...Array(percent10).keys()];
 
+  const getColor = (percent) => {
+    if (percent < 30) {
+      return 'red';
+    } else if (percent < 50) {
+      return 'yellow';
+    } else {
+      return 'white';
+    }
+  };
+
   return (
     <>
       <div className="flex gap-3">
         {/* <img src={GaugeBg} style={styles.bg} alt="BatteryBG" /> */}
-        <div className="border-2 rounded-xl" style={styles.barsContainer}>
+        <div
+          className="border-2 rounded-xl"
+          style={{ ...styles.barsContainer, borderColor: getColor(percentage) }}>
           {percentageArray.map((ele, index) => (
-            // eslint-disable-next-line react/jsx-key
-            <div style={styles.barContainer}>
-              {index === 0 ? (
-                <div key={index} style={{ ...styles.bar, ...styles.barFirst }} />
-              ) : index === gaugeBarsNb - 1 ? (
-                <div key={index} style={{ ...styles.bar, ...styles.barLast }} />
-              ) : (
-                <div key={index} style={{ ...styles.bar }} />
-              )}
+            <div key={index} style={styles.barContainer}>
+              <div
+                style={{
+                  ...styles.bar,
+                  backgroundColor: getColor(percentage),
+                  ...(index === 0 ? styles.barFirst : {}),
+                  ...(index === gaugeBarsNb - 1 ? styles.barLast : {}),
+                }}
+              />
             </div>
           ))}
         </div>
         <div style={styles.barText}>
-          {percentage < lowBattery && <span style={styles.red}> {percentage}% </span>}
-          {percentage >= lowBattery && <span style={styles.green}> {percentage}%</span>}
+          {percentage < 30 ? (
+            <span style={styles.red}> {percentage}% </span>
+          ) : (
+            <span style={styles.green}> {percentage}% </span>
+          )}
         </div>
       </div>
     </>

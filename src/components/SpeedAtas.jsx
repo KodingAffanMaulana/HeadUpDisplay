@@ -18,7 +18,7 @@ const SpeedAtas = ({ speed }) => {
           <img src={car} alt="car" className="h-20" />
         </div>
 
-        <div className="flex-1 flex justify-center items-center bg-gray-700 text-white gap-4 text-4xl font-bold">
+        <div className="flex-1 flex justify-center items-center bg-gray-800 text-white gap-4 text-4xl font-bold">
           <div className="font-bold text-4xl">
             <div>D</div>
             <div>N</div>
