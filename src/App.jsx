@@ -27,7 +27,7 @@ function App() {
       ) : (
         // Jika sudah selesai loading, tampilkan konten utama
         <div className="flex items-center justify-center bg-[url('./assets/bg.svg')] h-screen">
-          <div className="w-full border-white border-2 border-dashed">
+          <div className="w-[80%] border-white border-2 border-dashed">
             <SpeedAtas speed={speed} />
             <SpeedBawah kilometers={kilometers} />
           </div>

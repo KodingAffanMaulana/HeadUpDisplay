@@ -18,7 +18,7 @@ const Time = () => {
 
   return (
     <div className="flex items-center justify-center gap-2">
-      <div className="bg-gray-950 text-white py-2 px-3">
+      <div className="text-white py-2 px-3">
         <h2 className="font-medium text-xl">{formatTime(currentTime)}</h2>
       </div>
     </div>
